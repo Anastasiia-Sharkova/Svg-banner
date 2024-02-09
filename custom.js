@@ -1,6 +1,9 @@
 const banner = document.getElementById('wrapper');
 
-const timeline = gsap.timeline({ default: { duration: 1 } });
+const timeline = gsap.timeline({
+  default: { duration: 1 },
+  onComplete: onCompleteFunction,
+ });
 timeline.
   from(banner, {
     delay: 0.6,
@@ -89,14 +92,16 @@ timeline.
     ">1"
   )
 
-let logo = document.querySelector(".logo");
 
-let logoAnimation = gsap.to(".logo-path", {
-  paused: true,
-  strokeDashoffset: 0,
-});
+  function onCompleteFunction(){
 
-logo.addEventListener("mouseenter", () => logoAnimation.play());
-logo.addEventListener("mouseleave", () => logoAnimation.reverse());
+    let logo = document.querySelector(".logo");
 
+    let logoAnimation = gsap.to(".logo-path", {
+      paused: true,
+      strokeDashoffset: 0,
+    });
 
+    logo.addEventListener("mouseenter", () => logoAnimation.play());
+    logo.addEventListener("mouseleave", () => logoAnimation.reverse());
+   }
