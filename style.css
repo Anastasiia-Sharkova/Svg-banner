@@ -221,7 +221,14 @@ a {
 
 .image-1 rect {
   stroke-dasharray: 321px;
-  animation: spiner 10s linear infinite;
+  -webkit-animation: spiner 10s linear infinite;
+          animation: spiner 10s linear infinite;
+}
+
+@-webkit-keyframes spiner {
+  to {
+    stroke-dashoffset: -1284px;
+  }
 }
 
 @keyframes spiner {
@@ -270,9 +277,20 @@ a {
 
 .link:hover .path,
 .svg-link:hover .path {
-  animation: icons 1s ease-in-out infinite;
+  -webkit-animation: icons 1s ease-in-out infinite;
+          animation: icons 1s ease-in-out infinite;
   color: var(--yellow-color);
   stroke-dashoffset: 15px;
+}
+
+@-webkit-keyframes icons {
+  0% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes icons {

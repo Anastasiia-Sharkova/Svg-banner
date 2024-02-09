@@ -3,8 +3,8 @@ const banner = document.getElementById('wrapper');
 const timeline = gsap.timeline({ default: { duration: 1 } });
 timeline.
   from(banner, {
-    delay: 0.2,
-    duration: 0.5,
+    delay: 0.6,
+    duration: 0.6,
     opacity: 0,
     ease: 'power1.out',
   })
@@ -15,7 +15,7 @@ timeline.
       scale: 4,
       transformOrigin: "155% -240%",
     },
-    "<"
+    ">"
   )
   .to(
     ".logo-path",
@@ -79,7 +79,6 @@ timeline.
     {
       scale: 1,
       stagger: {
-        // wrap advanced options in an object
         each: 0.1,
         from: "random",
         grid: "auto",
